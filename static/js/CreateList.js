@@ -1,4 +1,4 @@
-var CreatList = function () {
+var CreateList = function () {
 
     var initModule = function () {
         document.getElementById("addTaskBtn").addEventListener("click", onAddClicked);
