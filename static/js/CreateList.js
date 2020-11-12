@@ -26,6 +26,9 @@ var CreateList = function () {
 
         function deleteItem() {
             document.querySelector("ul").removeChild(taskItem);
+            if ($('to-do-list').length == 0){
+                document.getElementById("submit-button").disabled=true;
+            }
         }
     }
 
