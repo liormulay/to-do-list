@@ -2,6 +2,7 @@ var CreateList = function () {
 
     var initModule = function () {
         document.getElementById("addTaskBtn").addEventListener("click", onAddClicked);
+        document.getElementById("submit-button").addEventListener("click", onSubmitClicked);
     };
 
     var onAddClicked = function () {
@@ -9,6 +10,26 @@ var CreateList = function () {
             addTask();
             document.getElementById("taskInput").value = "";
         }
+    };
+
+    var onSubmitClicked = function () {
+        var list = $('to-do-list').map(function () {
+            return this.value
+        });
+
+        var today = new Date();
+        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var dateTime = date + ' ' + time;
+
+        axios.post('/api/list',
+            {
+                dateTime: dateTime,
+                list: ["jnm", "jnjn"]
+            })
+            .then((response) => {
+                console.log(response);
+            }, (error) => console.log(error));
     };
 
     function addTask() {
@@ -22,16 +43,16 @@ var CreateList = function () {
         deleteBtn.appendChild(x);
         taskItem.appendChild(deleteBtn);
         deleteBtn.addEventListener("click", deleteItem);
-        document.getElementById("submit-button").disabled=false;
+        document.getElementById("submit-button").disabled = false;
 
         function deleteItem() {
             document.querySelector("ul").removeChild(taskItem);
-            if ($('to-do-list').length == 0){
-                document.getElementById("submit-button").disabled=true;
+            if ($('to-do-list').length == 0) {
+                document.getElementById("submit-button").disabled = true;
             }
         }
     }
 
-    return { initModule: initModule};
+    return { initModule: initModule };
 
 }();

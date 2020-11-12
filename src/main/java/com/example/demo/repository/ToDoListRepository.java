@@ -1,5 +1,6 @@
-package com.example.demo.entities;
+package com.example.demo.repository;
 
+import com.example.demo.entities.ToDoList;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Date;
