@@ -22,6 +22,7 @@ var CreateList = function () {
         deleteBtn.appendChild(x);
         taskItem.appendChild(deleteBtn);
         deleteBtn.addEventListener("click", deleteItem);
+        document.getElementById("submit-button").disabled=false;
 
         function deleteItem() {
             document.querySelector("ul").removeChild(taskItem);
