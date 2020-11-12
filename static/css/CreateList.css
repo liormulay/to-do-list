@@ -76,6 +76,10 @@ li {
     .pinkButton:hover {
         background-color: #fb62cf;
     }
+    .pinkButton:disabled {
+        background-color: #b581a6;
+        cursor: not-allowed;
+    }
 
 ul {
     list-style: none;
