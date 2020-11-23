@@ -13,9 +13,13 @@ var CreateList = function () {
     };
 
     var onSubmitClicked = function () {
-        var list = $('to-do-list').map(function () {
-            return this.value
-        });
+        var ul = document.getElementById('to-do-list');
+        var items = ul.getElementsByTagName("li");
+        var array=[];
+        for (var i = 0; i < items.length; ++i) {
+            array.push(items[i].textContent || items[i].innerText);
+        }
+
 
         var today = new Date();
         var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
@@ -25,7 +29,7 @@ var CreateList = function () {
         axios.post('/api/list',
             {
                 dateTime: dateTime,
-                list: ["jnm", "jnjn"]
+                list: array
             })
             .then((response) => {
                 console.log(response);
