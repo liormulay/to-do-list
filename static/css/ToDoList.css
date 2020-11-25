@@ -13,9 +13,10 @@ header {
 }
 
 #addNoteBtn {
-    position: absolute;
-    top: 80%;
-    left: 10%;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 50px;
+    left: 50px;
     height: 100px;
     width: 100px;
     border-radius: 50%;
@@ -38,8 +39,8 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fill, 100px);
     grid-gap: 10em;
-    left: 10%;
-    right: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .wrapper>div {
