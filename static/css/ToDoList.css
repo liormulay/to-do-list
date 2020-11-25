@@ -1,15 +1,15 @@
-﻿html{
-    height:100%;
+﻿html {
+    height: 100%;
 }
 
 body {
-    background-image:linear-gradient(blue,white);
+    background-image: linear-gradient(blue, white);
 }
 
-header{
-    text-align:center;
-    margin-top:40px;
-    color:white;
+header {
+    text-align: center;
+    margin-top: 40px;
+    color: white;
 }
 
 #addNoteBtn {
@@ -30,23 +30,19 @@ header{
     font-weight: bold;
 }
 
-    #addNoteBtn:hover {
-        background-color: #fb62cf;
-    }
-
-.wrapper {
-    position: absolute;
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    grid-gap: 5em;
-    grid-auto-rows: 100px;
-    left: 10%;
-    right:10%;
-    top:15%;
+#addNoteBtn:hover {
+    background-color: #fb62cf;
 }
 
-    .wrapper > div {
-        border: #000000 3px solid;
-    }
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    grid-gap: 10em;
+    left: 10%;
+    right: 10%;
+}
 
-
+.wrapper>div {
+    border: #000000 3px solid;
+    height: 100px;
+}
