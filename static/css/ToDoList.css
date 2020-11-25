@@ -37,13 +37,15 @@ header {
 
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 100px);
-    grid-gap: 10em;
+    grid-template-columns: repeat(auto-fill, 200px);
+    grid-gap: 5em;
     margin-left: 10%;
     margin-right: 10%;
+    margin-top: 30px;
+    padding-bottom: 50px;
 }
 
 .wrapper>div {
     border: #000000 3px solid;
-    height: 100px;
+    height: 200px;
 }
