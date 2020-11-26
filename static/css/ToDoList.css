@@ -3,7 +3,7 @@
 }
 
 body {
-    background-image: linear-gradient(blue, white);
+    background-color: #003ab1;
 }
 
 header {
@@ -46,7 +46,9 @@ header {
     padding-bottom: 50px;
 }
 
-    .wrapper > div {
+    .wrapper > button {
         border: #000000 3px solid;
         height: 200px;
+        border-radius: 15px;
+        cursor: pointer;
     }
