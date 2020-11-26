@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class Controller {
 
@@ -16,5 +18,10 @@ public class Controller {
     public ResponseEntity<?> saveList(@RequestBody ToDoList toDoList) {
         toDoListRepository.save(toDoList);
         return ResponseEntity.ok().build();
+    }
+
+    @RequestMapping(value = "/api/lists", method = RequestMethod.GET)
+    public List<ToDoList> getLists() {
+        return toDoListRepository.findAll();
     }
 }
