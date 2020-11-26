@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background-color: #003ab1;
+    background-color: #003ab1 !important;
 }
 
 input {
