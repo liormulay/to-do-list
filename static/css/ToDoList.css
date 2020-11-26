@@ -47,8 +47,13 @@ header {
 }
 
     .wrapper > button {
-        border: #000000 3px solid;
+        background-color: #03ccc5;
+        border: #0bff49 1px solid;
         height: 200px;
         border-radius: 15px;
         cursor: pointer;
     }
+
+        .wrapper > button:hover {
+            background-color: #03ccdf;
+        }
