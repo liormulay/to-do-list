@@ -32,7 +32,9 @@ var CreateList = function () {
                 list: array
             })
             .then((response) => {
-                console.log(response);
+                alert("Your list is saved successfully !");
+                window.location.href = "index.html";
+
             }, (error) => console.log(error));
     };
 
