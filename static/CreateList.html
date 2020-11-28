@@ -3,9 +3,10 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="css/CreateList.css" />
+    <link rel="stylesheet" type="text/css" href="css/BuildList.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="js/BuildList.js" type="text/javascript" defer></script>
     <script src="js/CreateList.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -14,18 +15,7 @@
     <title></title>
 </head>
 <body onload="CreateList.initModule()">
-<header>
-    <h1>Create your To-Do list</h1>
-</header>
 
-<main>
-    <div class="contain">
-        <input id="taskInput" placeholder="Enter a task" />
-        <button id="addTaskBtn" class="pinkButton">Add to list</button>
-        <ul id="to-do-list" class="listclass"></ul>
-        <button id="submit-button" class="pinkButton" disabled>Submit</button>
-    </div>
-</main>
 
 </body>
 </html>

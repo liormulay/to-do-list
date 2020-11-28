@@ -11,7 +11,7 @@ var MainMenu = function () {
                 const button = document.createElement("button");
                 button.innerText = date;
                 button.addEventListener("click", function () {
-                    console.log(i);
+                    window.location.href = "EditList.html";
                 })
                 container.appendChild(button);
             }

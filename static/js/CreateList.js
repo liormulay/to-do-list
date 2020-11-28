@@ -3,6 +3,7 @@ var CreateList = function() {
     var initModule = function() {
         document.getElementById("addTaskBtn").addEventListener("click", onAddClicked);
         document.getElementById("submit-button").addEventListener("click", onSubmitClicked);
+        document.getElementsByTagName("h1")[0].innerHTML  = "Create your To-Do list";
     };
 
     var onAddClicked = function() {
