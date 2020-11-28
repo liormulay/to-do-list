@@ -1,23 +1,23 @@
-var CreateList = function () {
+var CreateList = function() {
 
-    var initModule = function () {
+    var initModule = function() {
         document.getElementById("addTaskBtn").addEventListener("click", onAddClicked);
         document.getElementById("submit-button").addEventListener("click", onSubmitClicked);
     };
 
-    var onAddClicked = function () {
+    var onAddClicked = function() {
         if (document.getElementById("taskInput").value != "") {
             addTask();
             document.getElementById("taskInput").value = "";
         }
     };
 
-    var onSubmitClicked = function () {
+    var onSubmitClicked = function() {
         var ul = document.getElementById('to-do-list');
         var items = ul.getElementsByTagName("li");
-        var array=[];
+        var array = [];
         for (var i = 0; i < items.length; ++i) {
-            array.push(items[i].textContent || items[i].innerText);
+            array.push(items[i].childNodes.item(0).textContent || items[i].childNodes.item(0).innerText);
         }
 
 
@@ -26,8 +26,7 @@ var CreateList = function () {
         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         var dateTime = date + ' ' + time;
 
-        axios.post('/api/list',
-            {
+        axios.post('/api/list', {
                 dateTime: dateTime,
                 list: array
             })
@@ -45,8 +44,7 @@ var CreateList = function () {
         document.querySelector("ul").appendChild(taskItem);
 
         var deleteBtn = document.createElement("button");
-        var x = document.createTextNode("X");
-        deleteBtn.appendChild(x);
+        deleteBtn.innerText = "X";
         taskItem.appendChild(deleteBtn);
         deleteBtn.addEventListener("click", deleteItem);
         document.getElementById("submit-button").disabled = false;
