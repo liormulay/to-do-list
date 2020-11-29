@@ -13,7 +13,23 @@ var EditList = function () {
         list = atob(list);
         //parses to Object the JSON string
         list = JSON.parse(list);
+        var date = list["dateTime"];
+        var items = list["list"];
+        for (let i = 0; i < items.length; i++) {
+            var taskItem = document.createElement("li");
+            var text = document.createTextNode(items[i]);
+            taskItem.appendChild(text);
+            document.querySelector("ul").appendChild(taskItem);
 
+            var deleteBtn = document.createElement("button");
+            deleteBtn.innerText = "X";
+            taskItem.appendChild(deleteBtn);
+            deleteBtn.addEventListener("click", deleteItem);
+
+            function deleteItem() {
+                document.querySelector("ul").removeChild(taskItem);
+            }
+        }
 
         return true;
     }
