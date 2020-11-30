@@ -14,11 +14,11 @@ input {
 }
 
 header {
-    position: fixed;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     color: white;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 5%;
+    margin-top: 2%;
 }
 
 li {
@@ -49,10 +49,9 @@ li {
         }
 
 .contain {
-    position: fixed;
     width: 100%;
-    top: 20%;
     text-align: center;
+    margin-top: 2%;
 }
 
 .listclass {
@@ -76,6 +75,7 @@ li {
     .pinkButton:hover {
         background-color: #fb62cf;
     }
+
     .pinkButton:disabled {
         background-color: #b581a6;
         cursor: not-allowed;
