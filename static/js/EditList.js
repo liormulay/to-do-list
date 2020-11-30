@@ -19,24 +19,28 @@ var EditList = function () {
 
                 var items = list["list"];
                 for (let i = 0; i < items.length; i++) {
-                    var taskItem = document.createElement("li");
                     var text = document.createTextNode(items[i]);
-                    taskItem.appendChild(text);
-                    document.querySelector("ul").appendChild(taskItem);
-
-                    var deleteBtn = document.createElement("button");
-                    deleteBtn.innerText = "X";
-                    taskItem.appendChild(deleteBtn);
-                    deleteBtn.addEventListener("click", deleteItem);
-
-                    function deleteItem() {
-                        document.querySelector("ul").removeChild(taskItem);
-                    }
+                    createItem(text);
                 }
 
                 return true;
             });
 
+    }
+
+    function createItem(text){
+        var taskItem = document.createElement("li");
+        taskItem.appendChild(text);
+        document.querySelector("ul").appendChild(taskItem);
+
+        var deleteBtn = document.createElement("button");
+        deleteBtn.innerText = "X";
+        taskItem.appendChild(deleteBtn);
+        deleteBtn.addEventListener("click", deleteItem);
+
+        function deleteItem() {
+            document.querySelector("ul").removeChild(taskItem);
+        }
     }
 
 
