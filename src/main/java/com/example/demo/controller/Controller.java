@@ -21,6 +21,14 @@ public class Controller {
         return ResponseEntity.ok().build();
     }
 
+    @RequestMapping(value = "/api/list", method = RequestMethod.PUT)
+    public ResponseEntity<?> editList(@RequestBody ToDoList toDoList) throws Throwable {
+        ToDoList originalList = toDoListRepository.findById(toDoList.getId()).orElseThrow((Supplier<Throwable>) IllegalArgumentException::new);
+        originalList.setList(toDoList.getList());
+        toDoListRepository.save(originalList);
+        return ResponseEntity.ok().build();
+    }
+
     @RequestMapping(value = "/api/lists", method = RequestMethod.GET)
     public List<ToDoList> getLists() {
         return toDoListRepository.findAll();
