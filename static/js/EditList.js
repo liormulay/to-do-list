@@ -6,6 +6,8 @@ var EditList = function () {
         const urlParams = new URLSearchParams(queryString);
         const id = urlParams.get('id');
         loadData(id);
+        document.getElementById("addTaskBtn").addEventListener("click", onAddClicked);
+
     };
 
     function loadData(id) {
@@ -28,6 +30,15 @@ var EditList = function () {
 
     }
 
+    var onAddClicked = function() {
+        if (document.getElementById("taskInput").value != "") {
+            var text = document.createTextNode(document.getElementById("taskInput").value);
+            createItem(text);
+            document.getElementById("taskInput").value = "";
+            document.getElementById("submit-button").disabled = false;
+        }
+    };
+
     function createItem(text){
         var taskItem = document.createElement("li");
         taskItem.appendChild(text);
@@ -40,6 +51,7 @@ var EditList = function () {
 
         function deleteItem() {
             document.querySelector("ul").removeChild(taskItem);
+            document.getElementById("submit-button").disabled = false;
         }
     }
 
