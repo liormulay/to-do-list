@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 @RestController
 public class Controller {
@@ -23,5 +24,10 @@ public class Controller {
     @RequestMapping(value = "/api/lists", method = RequestMethod.GET)
     public List<ToDoList> getLists() {
         return toDoListRepository.findAll();
+    }
+
+    @RequestMapping(value = "/api/list", method = RequestMethod.GET)
+    public ToDoList getList(@RequestParam String id) throws Throwable {
+        return toDoListRepository.findById(id).orElseThrow((Supplier<Throwable>) IllegalArgumentException::new);
     }
 }
