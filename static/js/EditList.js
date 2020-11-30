@@ -14,6 +14,10 @@ var EditList = function () {
         //parses to Object the JSON string
         list = JSON.parse(list);
         var date = list["dateTime"];
+        var titleDate = document.createElement("h2");
+        titleDate.innerHTML = "Created at " + date;
+        document.querySelector("header").appendChild(titleDate);
+
         var items = list["list"];
         for (let i = 0; i < items.length; i++) {
             var taskItem = document.createElement("li");
