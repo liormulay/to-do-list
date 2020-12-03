@@ -66,6 +66,11 @@
     left: 10px;
     top: 10px;
     border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .wrapper > div > button:hover{
+    background-color:rgb(255, 68, 68);
   }
 
   .wrapper > div > p {
