@@ -38,4 +38,10 @@ public class Controller {
     public ToDoList getList(@RequestParam String id) throws Throwable {
         return toDoListRepository.findById(id).orElseThrow((Supplier<Throwable>) IllegalArgumentException::new);
     }
+
+    @RequestMapping(value = "/api/list", method = RequestMethod.DELETE)
+    public ResponseEntity<?> deleteList(@RequestParam String id) {
+        toDoListRepository.deleteById(id);
+        return ResponseEntity.ok().build();
+    }
 }

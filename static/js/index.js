@@ -15,10 +15,10 @@ var MainMenu = function () {
                     const deleteBtn = document.createElement("button");
                     deleteBtn.innerHTML = "X";
                     deleteBtn.addEventListener("click", function (e) {
-                        if (confirm("Are you sure you want to delete this list?")) {
-
-                        }
                         e.stopPropagation();
+                        if (confirm("Are you sure you want to delete this list?")) {
+                            deleteList(id);
+                        }
                     });
                     div.addEventListener("click", function () {
                         window.location.href = "EditList.html?id=" + id;
@@ -33,6 +33,14 @@ var MainMenu = function () {
     var onAddClick = function () {
         window.location.href = "CreateList.html";
     };
+
+    function deleteList(id) {
+        axios.delete('/api/list', { params: { id: id } })
+            .then((response) => {
+                alert("The list was deleted");
+                location.reload();
+            });
+    }
 
     return { initModule: initModule };
 }();
