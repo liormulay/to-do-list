@@ -14,9 +14,15 @@ var MainMenu = function () {
                     const div = document.createElement("div");
                     const deleteBtn = document.createElement("button");
                     deleteBtn.innerHTML = "X";
+                    deleteBtn.addEventListener("click", function (e) {
+                        if (confirm("Are you sure you want to delete this list?")) {
+
+                        }
+                        e.stopPropagation();
+                    });
                     div.addEventListener("click", function () {
                         window.location.href = "EditList.html?id=" + id;
-                    })
+                    });
                     div.appendChild(deleteBtn);
                     div.appendChild(date);
                     container.appendChild(div);
