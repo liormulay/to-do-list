@@ -1,18 +1,18 @@
 ﻿html {
     height: 100%;
-}
+  }
 
-body {
+  body {
     background-color: #003ab1;
-}
+  }
 
-header {
+  header {
     text-align: center;
     margin-top: 40px;
     color: white;
-}
+  }
 
-#addNoteBtn {
+  #addNoteBtn {
     position: fixed;
     bottom: 0;
     margin-bottom: 50px;
@@ -29,13 +29,13 @@ header {
     align-items: center;
     font-size: 50px;
     font-weight: bold;
-}
+  }
 
-    #addNoteBtn:hover {
-        background-color: #fb62cf;
-    }
+  #addNoteBtn:hover {
+    background-color: #fb62cf;
+  }
 
-.wrapper {
+  .wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, max-content));
     justify-content: center;
@@ -44,16 +44,33 @@ header {
     margin-right: 10%;
     margin-top: 50px;
     padding-bottom: 50px;
-}
+  }
 
-    .wrapper > button {
-        background-color: #03ccc5;
-        border: #0bff49 1px solid;
-        height: 200px;
-        border-radius: 15px;
-        cursor: pointer;
-    }
+  .wrapper > div {
+    background-color: #03ccc5;
+    border: #0bff49 1px solid;
+    height: 200px;
+    border-radius: 15px;
+    cursor: pointer;
+  }
 
-        .wrapper > button:hover {
-            background-color: #03ccdf;
-        }
+  .wrapper > div:hover {
+    background-color: #03ccdf;
+  }
+
+  .wrapper > div > button {
+    position: relative;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    left: 10px;
+    top: 10px;
+    border-radius: 5px;
+  }
+
+  .wrapper > div > p {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 68px;
+  }

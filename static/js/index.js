@@ -8,14 +8,18 @@ var MainMenu = function () {
                 const container = document.getElementById("gridNotes");
                 for (let i = 0; i < data.length; i++) {
                     var list = data[i];
-                    let date = list.dateTime;
+                    const date = document.createElement("p");
+                    date.innerHTML = list.dateTime;
                     let id = list.id;
-                    const button = document.createElement("button");
-                    button.innerText = date;
-                    button.addEventListener("click", function () {
+                    const div = document.createElement("div");
+                    const deleteBtn = document.createElement("button");
+                    deleteBtn.innerHTML = "X";
+                    div.addEventListener("click", function () {
                         window.location.href = "EditList.html?id=" + id;
                     })
-                    container.appendChild(button);
+                    div.appendChild(deleteBtn);
+                    div.appendChild(date);
+                    container.appendChild(div);
                 }
             });
     };
