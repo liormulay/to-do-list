@@ -75,7 +75,7 @@
 
   .wrapper > div > p {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     margin-top: 68px;
+    margin-left: 100px;
+    transform: translateX(-50%);
   }
