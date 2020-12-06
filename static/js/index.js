@@ -37,7 +37,6 @@ var MainMenu = function () {
     function deleteList(id) {
         axios.delete('/api/list', { params: { id: id } })
             .then((response) => {
-                alert("The list was deleted");
                 location.reload();
             });
     }
